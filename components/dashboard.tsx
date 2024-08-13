@@ -6,7 +6,7 @@ import dataset from '@/public/dataset.json';
 
 const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCustomer, setSelectedCustomer] = useState(null);
+  const [selectedCustomer, setSelectedCustomer] = useState<any>(null);
 
   // Filter data based on search query
   const filteredData = useMemo(() => {
@@ -15,7 +15,7 @@ const Dashboard = () => {
     );
   }, [searchQuery]);
 
-  const Row = useCallback(({ index, style }) => {
+  const Row = useCallback(({ index, style }: { index: any, style: any }) => {
     const item = filteredData[index];
     return (
       <div
@@ -45,7 +45,7 @@ const Dashboard = () => {
   }, [filteredData]);
 
   // Modal component to display customer details
-  const CustomerDetailModal = ({ customer, onClose }) => (
+  const CustomerDetailModal = ({ customer, onClose }: { customer: any, onClose: any }) => (
     <Dialog
       open={!!customer}
       onClose={onClose}
