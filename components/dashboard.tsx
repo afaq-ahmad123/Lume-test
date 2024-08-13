@@ -36,7 +36,7 @@ const Dashboard = () => {
         </div>
         <button
           onClick={() => setSelectedCustomer(item)}
-          className="text-blue-600 hover:underline"
+          className="bg-gray-200 p-2 rounded-lg flex items-center justify-center border border-gray-200"
         >
           …
         </button>
